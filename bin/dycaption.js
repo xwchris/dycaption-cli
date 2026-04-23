@@ -9,7 +9,7 @@ const API_URL = process.env.DY_CAPTION_API_URL || 'https://api.dytext.cn';
 const CONFIG_FILE = join(homedir(), '.dycaption');
 
 const SUPABASE_URL = process.env.DY_CAPTION_SUPABASE_URL || 'https://wcedjbnfdlfnomzwtwlq.supabase.co';
-const SUPABASE_ANON_KEY = process.env.DY_CAPTION_SUPABASE_ANON_KEY || '';
+const SUPABASE_ANON_KEY = process.env.DY_CAPTION_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndjZWRqYm5mZGxmbm9tend0d2xxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NjQ3NTQsImV4cCI6MjA5MTE0MDc1NH0.7yrhVx_huGDMzGllUivfyayEC7MnTrUzHUb5aVLFHLg';
 
 const colors = {
   red: (s) => `\x1b[0;31m${s}\x1b[0m`,
@@ -77,11 +77,7 @@ function getApiKey() {
 
 function requireSupabasePublicConfig() {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-    error(
-      `注册/登录需要 Supabase 公共配置\n\n` +
-      `  export DY_CAPTION_SUPABASE_URL="https://wcedjbnfdlfnomzwtwlq.supabase.co"\n` +
-      `  export DY_CAPTION_SUPABASE_ANON_KEY="your_supabase_anon_key"`
-    );
+    error('注册/登录需要 Supabase 公共配置');
   }
 }
 
@@ -352,8 +348,8 @@ function showHelp() {
 环境变量:
   DY_CAPTION_API_URL             API 地址 (默认: https://api.dytext.cn)
   DY_CAPTION_API_KEY             API 密钥（优先级高于配置文件）
-  DY_CAPTION_SUPABASE_URL        Supabase URL（注册/登录必需）
-  DY_CAPTION_SUPABASE_ANON_KEY   Supabase anon key（注册/登录必需）
+  DY_CAPTION_SUPABASE_URL        Supabase URL（默认已内置，可覆盖）
+  DY_CAPTION_SUPABASE_ANON_KEY   Supabase anon key（默认已内置，可覆盖）
 
 示例:
   dycaption setup

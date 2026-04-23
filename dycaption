@@ -9,7 +9,7 @@ API_KEY="${DY_CAPTION_API_KEY:-}"
 CONFIG_FILE="${HOME}/.dycaption"
 
 SUPABASE_URL="${DY_CAPTION_SUPABASE_URL:-https://wcedjbnfdlfnomzwtwlq.supabase.co}"
-SUPABASE_ANON_KEY="${DY_CAPTION_SUPABASE_ANON_KEY:-}"
+SUPABASE_ANON_KEY="${DY_CAPTION_SUPABASE_ANON_KEY:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndjZWRqYm5mZGxmbm9tend0d2xxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NjQ3NTQsImV4cCI6MjA5MTE0MDc1NH0.7yrhVx_huGDMzGllUivfyayEC7MnTrUzHUb5aVLFHLg}"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -58,7 +58,7 @@ check_config() {
 
 require_supabase_config() {
   if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
-    error "注册/登录需要 Supabase 公共配置\n\n  export DY_CAPTION_SUPABASE_URL=\"https://wcedjbnfdlfnomzwtwlq.supabase.co\"\n  export DY_CAPTION_SUPABASE_ANON_KEY=\"your_supabase_anon_key\""
+    error "注册/登录需要 Supabase 公共配置"
   fi
 }
 
@@ -427,8 +427,8 @@ dycaption-cli v1.0.0
 环境变量:
   DY_CAPTION_API_URL             API 地址 (默认: https://api.dytext.cn)
   DY_CAPTION_API_KEY             API 密钥（优先级高于配置文件）
-  DY_CAPTION_SUPABASE_URL        Supabase URL（注册/登录必需）
-  DY_CAPTION_SUPABASE_ANON_KEY   Supabase anon key（注册/登录必需）
+  DY_CAPTION_SUPABASE_URL        Supabase URL（默认已内置，可覆盖）
+  DY_CAPTION_SUPABASE_ANON_KEY   Supabase anon key（默认已内置，可覆盖）
 
 示例:
   dycaption setup

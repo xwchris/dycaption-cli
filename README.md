@@ -58,7 +58,7 @@ export DY_CAPTION_API_KEY="dy_xxxxx"
 export DY_CAPTION_API_URL="https://api.dytext.cn"  # 可选
 ```
 
-如果需要在 CLI 内使用 `register/login`，还需要提供 Supabase 公共配置：
+`register/login` 默认会使用内置的 Supabase 公共配置，也可以通过环境变量覆盖：
 
 ```bash
 export DY_CAPTION_SUPABASE_URL="https://wcedjbnfdlfnomzwtwlq.supabase.co"
