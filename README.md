@@ -1,6 +1,6 @@
 # dycaption-cli
 
-抖音视频文案提取命令行工具。支持 npm 安装和 `npx` 零安装调用。
+抖音视频文案提取命令行工具。支持 npm 安装或零依赖 bash 脚本。
 
 ## 安装
 
@@ -14,6 +14,14 @@ dycaption setup
 ```
 
 需要 Node.js >= 18。
+
+### bash 脚本（macOS/Linux）
+
+```bash
+curl -sL https://raw.githubusercontent.com/xwchris/dycaption-cli/main/dycaption -o /usr/local/bin/dycaption
+chmod +x /usr/local/bin/dycaption
+dycaption setup
+```
 
 ## 快速开始
 
