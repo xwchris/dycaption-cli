@@ -1,0 +1,28 @@
+{
+  "name": "dycaption",
+  "version": "1.0.0",
+  "description": "抖音文案提取 CLI - 注册/登录/转写一条龙",
+  "type": "module",
+  "bin": {
+    "dycaption": "./bin/dycaption.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "douyin",
+    "caption",
+    "transcribe",
+    "cli"
+  ],
+  "author": "xwchris",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xwchris/dycaption-cli.git"
+  },
+  "homepage": "https://dytext.cn"
+}
